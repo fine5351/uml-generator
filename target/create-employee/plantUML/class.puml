@@ -1,0 +1,15 @@
+@startuml
+title 創建員工 類別圖
+
+class Employee {
+  -id: bigint
+  -employee_id: varchar(255)
+  -name: varchar(255)
+  -gender: varchar(255)
+  -created_by: varchar(255)
+  -created_at: datetime
+  -updated_by: varchar(255)
+  -updated_at: datetime
+}
+
+@enduml

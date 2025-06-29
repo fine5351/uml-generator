@@ -1,0 +1,21 @@
+@startuml
+title 創建員工 活動圖
+
+start
+:接收創建員工請求\n(name, gender);
+if (name 是否唯一?) then (是)
+  if (gender 是否為 F、M 或 Unknown?) then (是)
+    :設置 created_by 和 updated_by\n(從 header.userName 取得);
+    :設置 created_at 和 updated_at\n(系統時間);
+    :存儲員工資料到資料庫;
+    :生成 employee_id;
+    :返回 employee_id;
+  else (否)
+    :返回錯誤訊息\n(gender 無效);
+  endif
+else (否)
+  :返回錯誤訊息\n(name 已存在);
+endif
+stop
+
+@enduml

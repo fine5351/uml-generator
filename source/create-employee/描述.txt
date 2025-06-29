@@ -1,0 +1,4 @@
+此 api 會將 request 中的資料寫入 DB, name 為 unique key, 需要進行檢核
+gender 只有 F、M、Unknown
+created_by、updated_by 為 api 使用者, 從 header.userName 取得
+created_at、updated_at 為系統時間

@@ -1,0 +1,15 @@
+@startuml
+title 創建員工 時序圖
+
+participant User as 使用者
+participant System as 系統
+participant Database as 資料庫
+
+User -> System: 發送創建員工請求\n(name, gender)
+System -> System: 檢查 name 是否唯一
+System -> System: 檢查 gender 是否為 F、M 或 Unknown
+System -> Database: 存儲員工資料\n(name, gender, created_by, updated_by, created_at, updated_at)
+Database --> System: 返回 employee_id
+System --> User: 回應 employee_id
+
+@enduml
